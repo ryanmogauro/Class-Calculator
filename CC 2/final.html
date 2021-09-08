@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <title>Overall Grade Calculator</title>
+   <head>
+       <meta charset="UTF-8">
+       <link rel="stylesheet" type="text/css"
+       href="final.css">
+       <script>
+           function computeGrade() {
+  var cg = document.getElementById("cg").value;
+  var gof = document.getElementById("gof").value;
+  var wof = document.getElementById("wof").value;
+  var og = (cg *(1-(wof/100)) + (gof * (wof/100)))
+  var prettyOg = og.toFixed(2)
+  document.getElementById("og").innerHTML = "Overall Grade: " + prettyOg + "%";
+
+}
+       </script>
+       <nav>
+           <ul>
+               <LH>Class Calculator</LH>
+                  <li><a href = "needed.html"> Needed Grade</a></li>
+                  <li><a href = "final.html"> Overall Grade</a></li>
+                  <li><a href = "gpa.html"> GPA Calculator</a></li>
+                  <li><a href = "about.html"> About Page</a></li>
+                  <li><a href = "index.html"> Home Page</a></li>
+           </ul>
+           </nav>
+   </head>
+   <h1> Overall Grade Calculator</h1>
+   <p>Current grade:<input id="cg" min="1" max="120" placeholder="i.e. 89"></input></p>
+   <p>Grade on final:<input id="gof" min="1" max="120"placeholder="i.e. 84"></input></p>
+   <p>Final weight: <input id="wof" min="1" max="100"placeholder="i.e. 15"></input></p>
+   <p><button onclick="computeGrade()">Calculate</button></p>
+   <h2 id="og"></h2>
+   <h3>If you have any questions about the overall grade calculator, click <a href="finalinfo.html">here</a></h3>
+
+</body>
+</html>

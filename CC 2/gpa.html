@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <html>
+    <title>GPA Calculator</title>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+    href="gpa.css">
+    <script>
+    function computeGPA() {
+    var aPlus = +document.getElementById("aPlus").value;
+    var a = +document.getElementById("a").value;
+    var aMinus = +document.getElementById("aMinus").value;
+    var bPlus = +document.getElementById("bPlus").value;
+    var b = +document.getElementById("b").value;
+    var bMinus = +document.getElementById("bMinus").value;
+    var cPlus = +document.getElementById("cPlus").value;
+    var c = +document.getElementById("c").value;
+    var cMinus = +document.getElementById("cMinus").value;
+    var dPlus = +document.getElementById("dPlus").value;
+    var d = +document.getElementById("d").value;
+    var dMinus = +document.getElementById("dMinus").value;
+    var f = +document.getElementById("f").value;
+    var og = ((aPlus*4)+(a*4)+(aMinus*3.7)+(bPlus*3.3)+(b*3)+(bMinus*2.7)+(cPlus*2.3)+(c*2)+
+    (cMinus*1.7)+(dPlus*1.3)+(d*1)+(dMinus*.7))
+    /
+    ((parseInt(aPlus)+
+    parseInt(a)+parseInt(aMinus)+parseInt(bPlus)+parseInt(b)+ parseInt(bMinus)+
+    parseInt(cPlus)+ parseInt(c)+ parseInt(cMinus)+
+    parseInt(dPlus)+parseInt(d)+parseInt(dMinus)+ parseInt(f)) || 1); // prevent div by 0
+    var prettyOg = og.toFixed(2);
+    document.getElementById("og").innerHTML = "GPA: " + prettyOg;
+    }
+    </script>
+    </head>
+    <nav>
+    <ul>
+    <LH>Class Calculator</LH>
+    <li><a href = "needed.html"> Needed Grade</a></li>
+    <li><a href = "final.html"> Overall Grade</a></li>
+    <li><a href = "gpa.html"> GPA Calculator</a></li>
+    <li><a href = "about.html"> About Page</a></li>
+    <li><a href = "index.html"> Home Page</a></li>
+    </ul>
+    </nav>
+
+    </body>
+    <h1> GPA Calculator</h1>
+    <p>Number of A+:<input id="aPlus" min="0" max="120"></input></p>
+    <p>Number of A: <input id="a" min="0" max="120"></input></p>
+    <p>Number of A-:<input id="aMinus" min="0" max="120"></input></p>
+    <p>Number of B+:<input id="bPlus" min="0" max="120"></input></p>
+    <p>Number of B: <input id="b" min="0" max="120"></input></p>
+    <p>Number of B-:<input id="bMinus" min="0" max="120"></input></p>
+    <p>Number of C+:<input id="cPlus" min="0" max="120"></input></p>
+    <p>Number of C: <input id="c" min="0" max="120"></input></p>
+    <p>Number of C-:<input id="cMinus" min="0" max="120"></input></p>
+    <p>Number of D+:<input id="dPlus" min="0" max="100"></input></p>
+    <p>Number of D: <input id="d" min="0" max="120"></input></p>
+    <p>Number of D-:<input id="dMinus" min="0" max="120"></input></p>
+    <p>Number of F: <input id="f" min="0" max="120"
+    <br>
+    <br>
+    <br>
+    <button onclick="computeGPA()">Calculate</button>
+    <h2 id="og"></h2>
+    <h3>If you have any questions about the GPA calculator, click <a href = "gpainfo.html">here</h3>
+    </html>

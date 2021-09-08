@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <title>Needed Grade Calculator</title>
+   <head>
+       <meta charset="UTF-8">
+       <link rel="stylesheet" type="text/css"
+       href="needed.css">
+       <script>
+           function computeGrade() {
+  var cg = document.getElementById("cg").value;
+  var dg = document.getElementById("dg").value;
+  var wof = document.getElementById("wof").value;
+  var ng = (dg - (cg*(1-(wof / 100)))) / (wof / 100)
+  var prettyNg = ng.toFixed(2);
+  document.getElementById("ng").innerHTML = "Needed grade: " + prettyNg + "%";
+}
+       </script>
+   </head>
+   <nav>
+       <ul>
+           <LH>Class Calculator</LH>
+              <li><a href = "needed.html"> Needed Grade</a></li>
+              <li><a href = "final.html"> Overall Grade</a></li>
+              <li><a href = "gpa.html"> GPA Calculator</a></li>
+              <li><a href = "about.html">About Page</a></li>
+          <li><a href = "index.html"> Home Page</a></li>
+       </ul>
+       </nav>
+   <h1> What do I need on my final?</h1>
+   <p>Current grade:<input id="cg" min="1" max="120" placeholder="i.e. 90"></input></p>
+   <p>Desired grade:<input id="dg" min="1" max="120"placeholder="i.e. 93"></input></p>
+   <p>Final weight: <input id="wof" min="1" max="100"placeholder="i.e. 20"></input></p>
+   <p><button onclick="computeGrade()">Calculate</button></p>
+   <h2 id="ng"></h2>
+   <h3>If you have any questions about the needed grade calculator, click <a href="neededinfo.html"> here </a></h3>
+</html>
